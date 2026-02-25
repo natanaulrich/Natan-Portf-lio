@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="imagex/png" href="img/icone.png">
+    <title>Natan | Portfólio</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="img/natan.png" alt="Foto de Natan" class="foto-perfil">
+        <h1>Natan Ulrich</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front-End</p>
+    </main>
+
+    <section id="sobre" class="linha">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou um desenvolvedor front-end apaixonado por criar experiências web únicas e memoráveis. Combino
+                código limpo com design moderno para desenvolver sites que não só funcionam perfeitamente, mas também
+                impressionam visualmente.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="linha">
+        <h2 class="projetos-titulos">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <a href="C:\xampp\htdocs\JMEstetica\index.html">
+                    <img src="img/projeto1.png" alt="Projeto 1" class="projetos-imagem">
+                </a>
+
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">JM Esteticista</h3>
+                    <p class="paragrafo-projetos">Multas curiosidades sobre estetica humanitaria, conteudos sobre
+                        limpeza de
+                        pele, massagem e peelings.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <a href="C:\xampp\htdocs\Natan Portfólio\index.html">
+                    <img src="img/projeto2.png" alt="Projeto 2" class="projetos-imagem">
+                </a>
+
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Os Griffins</h3>
+                    <p class="paragrafo-projetos">Aqui você vai encontrar muito sobre desenhos animados como Family Guy,
+                        Os
+                        Simpsons, curiosidades sobre eles, trailer, partes engraçadas, piadas e muito mais.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <a href="C:\xampp\htdocs\Curso PHP\index.html">
+                    <img src="img/projeto3.png" alt="Projeto 3" class="projetos-imagem">
+                </a>
+
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Projeto HTML, CSS, PHP</h3>
+                    <p class="paragrafo-projetos">Aqui tem um pouco do inicio do meu projeto que envolve HTML, CSS, PHP.
+                        Dentro dele vai ter soma, cadastro de clientes e produtos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="linha">
+        <h2 class="contato-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarwhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite Sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar via WhatsApp</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarwhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = "5542984160595"
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${5542984160595}?text=${msgFormatada}`
+
+            console.log(url)
+
+            window.open(url, '_blank')
+        }
+    </script>
+
+</body>
+
+</html>
